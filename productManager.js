@@ -99,7 +99,7 @@ class ProductManager {
 }
 
 // Pruebas
-const productCatalog = new ProductManager('products.txt');
+const productCatalog = new ProductManager('products.json');
 
 console.log(productCatalog.getProducts());
 
@@ -133,7 +133,7 @@ productCatalog.addProduct(
     4
 );
 
-// Testing omitir un campo (precio)
+// Testing omitir un valor (precio)
 productCatalog.addProduct(
     'lentes con aumento',
     'armazón dorado',
@@ -149,3 +149,7 @@ console.log(productCatalog.getProductById(3));
 //Testing updateProduct
 productCatalog.updateProduct(2, { price: 1200, stock: 15 });
 console.log(productCatalog.getProductById(2))
+
+//Testing deleteProduct
+productCatalog.deleteProduct(3)
+console.log(productCatalog.getProductById(3))
